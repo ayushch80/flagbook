@@ -22,19 +22,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js and Install Dependencies
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm install  # Install Bootstrap and other dependencies
-
       - name: Setup Ruby
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
           bundler-cache: true
-          cache-version: 0
 
       - name: Setup Pages
         id: pages
